@@ -1,0 +1,755 @@
+# Instincts generated from https://github.com/zanni098/promptfoo
+# Generated: 2026-05-24T17:08:46.368Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: promptfoo-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix, chore, feat, docs, test
+
+## Evidence
+
+- 87 commits analyzed
+- Detected conventional commit pattern
+- Examples: chore(deps): bump the pip group across 2 directories with 1 update (#9297), fix(dev): use tsx watch for server (#9301)
+
+---
+id: promptfoo-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Commit Length
+
+## Action
+
+Write moderate-length commit messages (~59 characters)
+
+## Evidence
+
+- Average commit message length: 59 chars
+- Based on 87 commits
+
+---
+id: promptfoo-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: promptfoo-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: promptfoo-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: promptfoo-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: promptfoo-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.ts
+
+---
+id: promptfoo-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: promptfoo-test-mocking
+trigger: "when mocking dependencies in tests"
+confidence: 0.75
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Test Mocking
+
+## Action
+
+Use vi.mock for mocking
+
+## Evidence
+
+- Mocking pattern detected: vi.mock
+- Consistent across test files
+
+---
+id: promptfoo-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Test Types
+
+## Action
+
+Write unit, integration tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration
+- Coverage config: yes
+
+---
+id: promptfoo-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/commands/*, src/importers/openaievals/*, src/importers/*
+
+---
+id: promptfoo-workflow-dependency-update
+trigger: "when doing dependency update"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Workflow Dependency Update
+
+## Action
+
+Follow the dependency-update workflow:
+1. Update version in package.json or requirements.txt
+2. Update package-lock.json or equivalent lock file
+3. Commit changes, often with bot attribution
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: package.json, package-lock.json, examples/*/requirements.txt
+
+---
+id: promptfoo-workflow-feature-development-with-tests-and-docs
+trigger: "when doing feature development with tests and docs"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Workflow Feature Development With Tests And Docs
+
+## Action
+
+Follow the feature-development-with-tests-and-docs workflow:
+1. Implement feature in src/
+2. Add or update tests in test/
+3. Update or add documentation in site/docs/ or site/static/
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/commands/*.ts, src/providers/**/*.ts, test/**/*.test.ts
+
+---
+id: promptfoo-workflow-bugfix-with-corresponding-tests
+trigger: "when doing bugfix with corresponding tests"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Workflow Bugfix With Corresponding Tests
+
+## Action
+
+Follow the bugfix-with-corresponding-tests workflow:
+1. Fix bug in src/ or relevant code file
+2. Add or update test in test/ to cover the bug or regression
+3. Sometimes update related documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: src/**/*.ts, test/**/*.test.ts
+
+---
+id: promptfoo-workflow-release-version-bump
+trigger: "when doing release version bump"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Workflow Release Version Bump
+
+## Action
+
+Follow the release-version-bump workflow:
+1. Update version in package.json
+2. Update package-lock.json
+3. Update CHANGELOG.md
+4. Update .release-please-manifest.json
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: package.json, package-lock.json, CHANGELOG.md
+
+---
+id: promptfoo-workflow-code-scan-action-update
+trigger: "when doing code scan action update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Workflow Code Scan Action Update
+
+## Action
+
+Follow the code-scan-action-update workflow:
+1. Modify code-scan-action/src/main.ts
+2. Update or add tests in test/code-scan-action/main.test.ts
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: code-scan-action/src/main.ts, test/code-scan-action/main.test.ts
+
+---
+id: promptfoo-workflow-provider-enhancement-with-tests
+trigger: "when doing provider enhancement with tests"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/zanni098/promptfoo
+---
+
+# Promptfoo Workflow Provider Enhancement With Tests
+
+## Action
+
+Follow the provider-enhancement-with-tests workflow:
+1. Update provider logic in src/providers/
+2. Update or add tests in test/providers/
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/providers/**/*.ts, test/providers/**/*.test.ts
+
+---
+id: promptfoo-instinct-file-naming-camelCase
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct File Naming CamelCase
+
+## Action
+
+Use camelCase for file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- Consistent file naming in src/
+
+---
+id: promptfoo-instinct-function-naming-camelCase
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+- Consistent function naming in src/
+
+---
+id: promptfoo-instinct-class-naming-PascalCase
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+- Consistent class naming in src/
+
+---
+id: promptfoo-instinct-constant-naming-SCREAMING_SNAKE_CASE
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Constant Naming SCREAMING_SNAKE_CASE
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+- Consistent constant naming in src/
+
+---
+id: promptfoo-instinct-import-style-relative
+trigger: "When importing modules within the codebase"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Import Style Relative
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+- Imports in src/commands/import.ts
+
+---
+id: promptfoo-instinct-export-style-named
+trigger: "When exporting functions, classes, or constants"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Export Style Named
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+- Exports in src/providers/
+
+---
+id: promptfoo-instinct-test-file-pattern
+trigger: "When creating a test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Test File Pattern
+
+## Action
+
+Name the file with the pattern *.test.ts
+
+## Evidence
+
+- Pattern in testing.filePattern
+- Files in test/ directory
+
+---
+id: promptfoo-instinct-use-vitest
+trigger: "When writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Use Vitest
+
+## Action
+
+Use the vitest testing framework
+
+## Evidence
+
+- Pattern in testing.framework
+- Imports from 'vitest' in test files
+
+---
+id: promptfoo-instinct-mocking-with-vi-mock
+trigger: "When mocking modules or functions in tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Mocking With Vi Mock
+
+## Action
+
+Use vi.mock for mocking
+
+## Evidence
+
+- Pattern in testing.mockingStyle
+- Usage in test/**/*.test.ts
+
+---
+id: promptfoo-instinct-test-coverage-config
+trigger: "When configuring tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Test Coverage Config
+
+## Action
+
+Enable and configure test coverage reporting
+
+## Evidence
+
+- Pattern in testing.coverageConfig
+- Presence of coverage config in vitest setup
+
+---
+id: promptfoo-instinct-unit-and-integration-tests
+trigger: "When writing tests for new or changed code"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Unit And Integration Tests
+
+## Action
+
+Include both unit and integration tests as appropriate
+
+## Evidence
+
+- Pattern in testing.testTypes
+- Examples in test/
+
+---
+id: promptfoo-instinct-conventional-commits
+trigger: "When writing a commit message"
+confidence: 0.95
+domain: git
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Conventional Commits
+
+## Action
+
+Use conventional commit prefixes: fix, feat, chore, docs, test
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples: 'fix(dev): ...', 'feat(cli): ...'
+
+---
+id: promptfoo-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Commit Length
+
+## Action
+
+Keep the commit message concise, around 59 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength
+- Examples in commits.examples
+
+---
+id: promptfoo-instinct-dependency-update-workflow
+trigger: "When a dependency has a new release or a security update is available"
+confidence: 0.99
+domain: workflow
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Dependency Update Workflow
+
+## Action
+
+Update package.json and lock files, then commit with bot attribution
+
+## Evidence
+
+- Workflow: dependency-update
+- Commits: 'chore(deps): ...'
+- Files: package.json, package-lock.json
+
+---
+id: promptfoo-instinct-feature-development-with-tests-and-docs-workflow
+trigger: "When adding a new CLI command, provider, or major feature"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Feature Development With Tests And Docs Workflow
+
+## Action
+
+Implement feature in src/, add/update tests in test/, update docs in site/docs/ or site/static/
+
+## Evidence
+
+- Workflow: feature-development-with-tests-and-docs
+- Commits: 'feat(cli): ...', 'test(eval): ...', 'docs: ...'
+
+---
+id: promptfoo-instinct-bugfix-with-corresponding-tests-workflow
+trigger: "When a bug is found in the codebase"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Bugfix With Corresponding Tests Workflow
+
+## Action
+
+Fix the bug in src/, add or update a test in test/ to cover the bug or regression
+
+## Evidence
+
+- Workflow: bugfix-with-corresponding-tests
+- Commits: 'fix(dev): ...', 'test(eval): ...'
+
+---
+id: promptfoo-instinct-release-version-bump-workflow
+trigger: "When preparing for a new release"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Release Version Bump Workflow
+
+## Action
+
+Update version in package.json, package-lock.json, CHANGELOG.md, and .release-please-manifest.json
+
+## Evidence
+
+- Workflow: release-version-bump
+- Files: package.json, package-lock.json, CHANGELOG.md, .release-please-manifest.json
+
+---
+id: promptfoo-instinct-code-scan-action-update-workflow
+trigger: "When improving or bugfixing the code-scan-action workflow"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Code Scan Action Update Workflow
+
+## Action
+
+Modify code-scan-action/src/main.ts and update/add tests in test/code-scan-action/main.test.ts
+
+## Evidence
+
+- Workflow: code-scan-action-update
+- Files: code-scan-action/src/main.ts, test/code-scan-action/main.test.ts
+
+---
+id: promptfoo-instinct-provider-enhancement-with-tests-workflow
+trigger: "When adding features or fixing bugs in provider integrations"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: zanni098/promptfoo
+---
+
+# Promptfoo Instinct Provider Enhancement With Tests Workflow
+
+## Action
+
+Update provider logic in src/providers/ and update/add tests in test/providers/
+
+## Evidence
+
+- Workflow: provider-enhancement-with-tests
+- Files: src/providers/**/*.ts, test/providers/**/*.test.ts
+
