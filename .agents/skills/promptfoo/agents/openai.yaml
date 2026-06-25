@@ -1,0 +1,6 @@
+interface:
+  display_name: "Promptfoo"
+  short_description: "Repo-specific patterns and workflows for promptfoo"
+  default_prompt: "Use the promptfoo repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
